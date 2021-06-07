@@ -6,3 +6,25 @@
 // Например для первой категории получится:
 // Категория: Животные
 // Количество элементов: 4
+
+const categories = document.querySelectorAll(".item");
+
+console.log(`'в списке ${categories.length} категории.'`);
+
+const arrCategories = [...categories];
+
+// console.log(arrCategories);
+
+// arrCategories.forEach((item) => {
+//   console.log(
+//     `Категория: ${item.firstElementChild.textContent} \nКоличество элементов: ${item.lastElementChild.children.length}`
+//   );
+// });
+
+arrCategories.forEach((item) => {
+  const nameCategories = item.firstElementChild.textContent;
+  const quantityElinCategories = item.lastElementChild.children.length;
+  console.log(
+    `Категория: ${nameCategories} \nКоличество элементов: ${quantityElinCategories}`
+  );
+});

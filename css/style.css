@@ -1,0 +1,43 @@
+img {
+  display: block;
+  height: 100%;
+}
+
+.gsllery-list {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.list-item {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    -23px 0 20px -23px rgba(0, 0, 0, 0.6), 23px 0 20px -23px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.btn-decrement {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  font-size: 2em;
+  background-color: rgb(143, 180, 214);
+}
+.btn-increment {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  font-size: 2em;
+  background-color: rgb(143, 180, 214);
+}
+.counter-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+.counter-span {
+  font-size: 3em;
+  color: tomato;
+}
