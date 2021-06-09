@@ -7,12 +7,8 @@ const refs = {
   outputName: document.querySelector("#name-output"),
 };
 
-const inputText = () => {
-  refs.outputName.textContent = refs.inputName.value;
-
-  if (refs.inputName.value === "" || Number(refs.inputName.value)) {
-    refs.outputName.textContent = "незнакомец";
-  }
-};
+const inputText = () =>
+  (refs.outputName.textContent =
+    refs.inputName.value !== "" ? refs.inputName.value : "незнакомец");
 
 refs.inputName.addEventListener("input", inputText);

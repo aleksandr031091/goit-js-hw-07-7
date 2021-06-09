@@ -21,5 +21,7 @@ const increment = () => {
   refs.value.textContent = counterValue += 1;
 };
 
+const counter = () => {};
+
 refs.btnDecrement.addEventListener("click", decrement);
 refs.btnIncrement.addEventListener("click", increment);

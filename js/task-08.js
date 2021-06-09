@@ -23,15 +23,17 @@ const getAmount = () => {
 const createBoxes = (amount) => {
   let element = "";
   let elSize = 30;
-
-  refs.divBox.innerHTML = "";
+  destroyBoxes();
 
   for (let i = 0; i < amount; i++) {
-    element += `<div style="width:${elSize}px ; height:${elSize}px ; background-color: 
+    element += `<div
+     style="width:${elSize}px;
+      height:${elSize}px;
+       background-color:
     rgb(
-    ${randomColor(0, 255)},
-    ${randomColor(0, 255)},
-    ${randomColor(0, 255)}
+    ${random()},
+    ${random()},
+    ${random()}
     );"
     ></div>`;
 
@@ -45,9 +47,12 @@ const destroyBoxes = () => {
   refs.divBox.innerHTML = "";
 };
 
-const randomColor = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+const random = () => {
+  return Math.floor(Math.random() * 255);
 };
+// const randomColor = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
 
 refs.render.addEventListener("click", getAmount);
 refs.destroy.addEventListener("click", destroyBoxes);
