@@ -13,7 +13,7 @@ const ingredients = [
   "Приправы",
 ];
 
-// const arrItems = ingredients.map((item) =>
+// ingredients.map((item) =>
 //   ingredientsRef.insertAdjacentHTML("beforeend", `<li>${item}</li>`)
 // );
 
@@ -22,7 +22,7 @@ const arrItems = ingredients.map((item) => {
 
   markupEl.textContent = item;
 
-  //   console.log(markup);
-
-  ingredientsRef.appendChild(markupEl);
+  return markupEl;
 });
+
+ingredientsRef.append(...arrItems);

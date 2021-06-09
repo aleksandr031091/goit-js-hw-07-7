@@ -8,3 +8,46 @@
 // Размеры самого первого div - 30px на 30px
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
+const refs = {
+  input: document.querySelector("input"),
+  render: document.querySelector('[data-action="render"]'),
+  destroy: document.querySelector('[data-action="destroy"]'),
+  divBox: document.querySelector("#boxes"),
+};
+
+const getAmount = () => {
+  let amount = refs.input.value;
+  createBoxes(amount);
+};
+
+const createBoxes = (amount) => {
+  let element = "";
+  let elSize = 30;
+
+  refs.divBox.innerHTML = "";
+
+  for (let i = 0; i < amount; i++) {
+    element += `<div style="width:${elSize}px ; height:${elSize}px ; background-color: 
+    rgb(
+    ${randomColor(0, 255)},
+    ${randomColor(0, 255)},
+    ${randomColor(0, 255)}
+    );"
+    ></div>`;
+
+    elSize += 10;
+  }
+
+  refs.divBox.insertAdjacentHTML("afterbegin", element);
+};
+
+const destroyBoxes = () => {
+  refs.divBox.innerHTML = "";
+};
+
+const randomColor = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+refs.render.addEventListener("click", getAmount);
+refs.destroy.addEventListener("click", destroyBoxes);

@@ -9,7 +9,8 @@ const refs = {
 
 const inputText = () => {
   refs.outputName.textContent = refs.inputName.value;
-  if (refs.inputName.value === "") {
+
+  if (refs.inputName.value === "" || Number(refs.inputName.value)) {
     refs.outputName.textContent = "незнакомец";
   }
 };
