@@ -28,4 +28,4 @@ const gallery = images
 
 // console.log(gallery);
 
-galleryRef.innerHTML("afterbegin", gallery);
+galleryRef.insertAdjacentHTML("afterbegin", gallery);
