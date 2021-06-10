@@ -13,14 +13,6 @@ console.log(`'в списке ${categoriesRef.length} категории.'`);
 
 const arrCategories = [...categoriesRef];
 
-// console.log(arrCategories);
-
-// arrCategories.forEach((item) => {
-//   console.log(
-//     `Категория: ${item.firstElementChild.textContent} \nКоличество элементов: ${item.lastElementChild.children.length}`
-//   );
-// });
-
 arrCategories.forEach((item) => {
   const nameCategories = item.firstElementChild.textContent;
   const quantityElinCategories = item.lastElementChild.children.length;

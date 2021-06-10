@@ -24,8 +24,6 @@ const gallery = images
   .map((image) => {
     return `<li class="list-item"><img  src="${image.url}"alt="${image.alt}" width=500 /></li>`;
   })
-  .join();
-
-// console.log(gallery);
+  .join("");
 
 galleryRef.insertAdjacentHTML("afterbegin", gallery);

@@ -5,20 +5,17 @@
 
 const inputref = document.querySelector("#validation-input");
 
-// const focusValue = () => {
-//   if (inputref.value.length === Number(inputref.dataset.length)) {
-//     inputref.classList.add("valid");
-//     inputref.classList.remove("invalid");
-//   } else {
-//     inputref.classList.add("invalid");
-//     inputref.classList.remove("valid");
-//   }
-// };
-
 const focusValue = () => {
-  inputref.value.length !== Number(inputref.dataset.length)
-    ? inputref.classList.add("invalid")
-    : inputref.classList.replace("invalid", "valid");
+  if (inputref.value.length === Number(inputref.dataset.length)) {
+    replaceClass("invalid", "valid");
+  } else {
+    replaceClass("valid", "invalid");
+  }
+};
+
+const replaceClass = (oldClass, newClass) => {
+  inputref.classList.add(newClass);
+  inputref.classList.remove(oldClass);
 };
 
 inputref.addEventListener("blur", focusValue);

@@ -17,7 +17,10 @@ const refs = {
 
 const getAmount = () => {
   let amount = refs.input.value;
-  createBoxes(amount);
+
+  const markup = createBoxes(amount);
+
+  refs.divBox.insertAdjacentHTML("afterbegin", markup);
 };
 
 const createBoxes = (amount) => {
@@ -40,7 +43,7 @@ const createBoxes = (amount) => {
     elSize += 10;
   }
 
-  refs.divBox.insertAdjacentHTML("afterbegin", element);
+  return element;
 };
 
 const destroyBoxes = () => {
@@ -50,9 +53,6 @@ const destroyBoxes = () => {
 const random = () => {
   return Math.floor(Math.random() * 255);
 };
-// const randomColor = (min, max) => {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// };
 
 refs.render.addEventListener("click", getAmount);
 refs.destroy.addEventListener("click", destroyBoxes);

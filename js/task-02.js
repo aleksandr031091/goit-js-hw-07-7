@@ -13,10 +13,6 @@ const ingredients = [
   "Приправы",
 ];
 
-// ingredients.map((item) =>
-//   ingredientsRef.insertAdjacentHTML("beforeend", `<li>${item}</li>`)
-// );
-
 const arrItems = ingredients.map((item) => {
   const markupEl = document.createElement("li");
 

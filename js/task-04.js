@@ -13,15 +13,18 @@ let counterValue = 0;
 
 const decrement = () => {
   if (counterValue !== 0) {
-    refs.value.textContent = counterValue -= 1;
+    counter(-1);
   }
 };
 
 const increment = () => {
-  refs.value.textContent = counterValue += 1;
+  counter(1);
 };
 
-const counter = () => {};
+const counter = (step) => {
+  counterValue += step;
+  refs.value.textContent = counterValue;
+};
 
 refs.btnDecrement.addEventListener("click", decrement);
 refs.btnIncrement.addEventListener("click", increment);

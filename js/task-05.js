@@ -8,7 +8,6 @@ const refs = {
 };
 
 const inputText = () =>
-  (refs.outputName.textContent =
-    refs.inputName.value !== "" ? refs.inputName.value : "незнакомец");
+  (refs.outputName.textContent = refs.inputName.value || "незнакомец");
 
 refs.inputName.addEventListener("input", inputText);
